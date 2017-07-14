@@ -15,10 +15,11 @@ module NpmPipeline
       end
 
       def update_assets
-        append_to_file 'app/assets/stylesheets/application.css',
-          "/*\n *= require gulp/app\n */\n"
-        append_to_file 'app/assets/javascripts/application.js',
-          "//= require gulp/app\n"
+        append_to_file Dir['app/assets/stylesheets/application.*{css,scss,sass}'].first,
+          "/*\n *= require brunch/app\n */\n"
+        
+        append_to_file Dir['app/assets/javascripts/application.js*'].first,
+          "//= require brunch/app\n"
       end
 
       def create_sample_css
