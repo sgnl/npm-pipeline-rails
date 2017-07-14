@@ -15,15 +15,10 @@ module NpmPipeline
       end
 
       def update_assets
-        append_to_file 'app/assets/stylesheets/application.css',
+        append_to_file Dir['app/assets/stylesheets/application.*{css,scss,sass}'].first,
           "/*\n *= require brunch/app\n */\n"
         
-        rescue Errno::ENOENT => e
-          append_to_file 'app/assets/stylesheets/application.scss',
-          "/*\n *= require brunch/app\n */\n"
-        end
-
-        append_to_file 'app/assets/javascripts/application.js',
+        append_to_file Dir['app/assets/javascripts/application.js*'].first,
           "//= require brunch/app\n"
       end
 
