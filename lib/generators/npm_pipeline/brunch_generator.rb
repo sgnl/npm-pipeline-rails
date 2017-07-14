@@ -17,6 +17,12 @@ module NpmPipeline
       def update_assets
         append_to_file 'app/assets/stylesheets/application.css',
           "/*\n *= require brunch/app\n */\n"
+        
+        rescue Errno::ENOENT => e
+          append_to_file 'app/assets/stylesheets/application.scss',
+          "/*\n *= require brunch/app\n */\n"
+        end
+
         append_to_file 'app/assets/javascripts/application.js',
           "//= require brunch/app\n"
       end
