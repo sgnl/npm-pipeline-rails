@@ -20,10 +20,10 @@ module NpmPipeline
 
       def update_assets
         append_to_file Dir['app/assets/stylesheets/application.*{css,scss,sass}'].first,
-          "/*\n *= require brunch/app\n */\n"
-        
+          "/*\n *= require webpack/app\n */\n"
+
         append_to_file Dir['app/assets/javascripts/application.js*'].first,
-          "//= require brunch/app\n"
+          "//= require webpack/app\n"
       end
 
       def update_gitignore

@@ -6,7 +6,7 @@ require 'npm-pipeline-rails/version'
 Gem::Specification.new do |spec|
   spec.name          = 'npm-pipeline-rails'
   spec.version       = NpmPipelineRails::VERSION
-  spec.authors       = ['Rico Sta. Cruz']
+  spec.authors       = ['Rico Sta. Cruz', 'Ray R. Farias (https://github.com/sgnl)']
   spec.email         = ['rstacruz@users.noreply.github.com']
 
   spec.summary       = 'Use npm as part of your Rails asset pipeline'
